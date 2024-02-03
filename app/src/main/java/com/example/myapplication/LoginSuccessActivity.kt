@@ -19,9 +19,11 @@ class LoginSuccessActivity : AppCompatActivity() {
 
         binding.textView.text = "안녕하세요 ${name}님"
 
+        //로그인 성공 시 1초 후 대기화면으로 화면 전환
         Handler(Looper.getMainLooper()).postDelayed({
             val intent2= Intent(this, WaitActivity::class.java)
             startActivity(intent2)
+            //액티비티 종료
             finish()
         },1000)
     }
