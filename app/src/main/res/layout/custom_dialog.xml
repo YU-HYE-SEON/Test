@@ -5,7 +5,7 @@
     android:background="#66000000"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="30초 안에 모든 적"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="45dp"
@@ -32,14 +32,14 @@
             android:layout_height="wrap_content"
             android:text="을 처치하세요!"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -48,12 +48,12 @@
             android:layout_height="wrap_content"
             android:text="LIFE   :"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginLeft="-13.5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
             android:scaleType="center"
             android:src="@drawable/life02" />
@@ -79,7 +79,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -89,7 +89,7 @@
             android:layout_marginRight="7dp"
             android:text="적과 닿으면 "
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="25dp"
@@ -105,7 +105,7 @@
             android:layout_marginRight="8dp"
             android:text="→"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:layout_width="25dp"
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:text="방향키"
                 android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="60dp"
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:text="공격"
                 android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:layout_width="60dp"
@@ -173,7 +173,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:text="모든 하트를 잃거나 30초가 끝나면 Game Over"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -200,7 +200,7 @@
             android:backgroundTint="#66000000"
             android:text="닫기"
             android:textColor="@color/white"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
