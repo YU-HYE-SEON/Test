@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
         android:letterSpacing="0.1"
-        android:text="터치하면 시작화면으로 돌아갑니다"
+        android:text="터치하면 대기화면으로 돌아갑니다"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#B3FFFFFF"
         android:textSize="30sp"

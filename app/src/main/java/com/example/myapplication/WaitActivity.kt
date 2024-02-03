@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -36,26 +37,27 @@ class CustomDialog(context: Context) : Dialog(context) {
     }
 }
 
-class StartActivity : AppCompatActivity() {
-    lateinit var startView: ImageView       //시작화면 이미지
-    lateinit var startViewBGM: MediaPlayer  //시작화면 배경음
+class WaitActivity : AppCompatActivity() {
+    lateinit var waitView: ImageView       //대기화면 이미지
+    lateinit var waitText: TextView        //대기화면 텍스트 ("화면을 터치하면 시작합니다")
+    lateinit var waitViewBGM: MediaPlayer  //대기화면 배경음
     lateinit var startSound: MediaPlayer    //시작 효과음
-    lateinit var startText: TextView        //시작화면 텍스트 ("화면을 터치하면 시작합니다")
     lateinit var btnPopUP: Button           //"게임 설명" 버튼
     lateinit var popUpSound: MediaPlayer    //팝업창 효과음
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         //status bar 검정색으로 변경
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_start)
+        setContentView(R.layout.activity_wait)
 
-        startView = findViewById(R.id.startView)
-        startText = findViewById(R.id.startText)
+        waitView = findViewById(R.id.waitView)
+        waitText = findViewById(R.id.waitText)
         btnPopUP = findViewById(R.id.btn_popup)
 
-        //시작화면 배경음, 시작 효과음, 팝업창 효과음 설정
-        startViewBGM = MediaPlayer.create(this, R.raw.startview_bgm)
+        //대기화면 배경음, 시작 효과음, 팝업창 효과음 설정
+        waitViewBGM = MediaPlayer.create(this, R.raw.waitview_bgm)
         startSound = MediaPlayer.create(this, R.raw.start_sound)
         popUpSound = MediaPlayer.create(this, R.raw.popup_sound)
 
@@ -66,12 +68,12 @@ class StartActivity : AppCompatActivity() {
             customDialog.show()
         }
 
-        //시작화면 배경음 무한루프로 재생
-        startViewBGM.start()
-        startViewBGM.setLooping(true)
+        //대기화면 배경음 무한루프로 재생
+        waitViewBGM.start()
+        waitViewBGM.setLooping(true)
 
         //텍스트가 깜빡거리는 애니메이션 설정
-        val anim = ObjectAnimator.ofFloat(startText, "alpha", 0f, 1f)
+        val anim = ObjectAnimator.ofFloat(waitText, "alpha", 0f, 1f)
         //애니메이션 한 사이클의 시간 (0.5초)
         anim.duration = 500
         //애니메이션 반복 방식 (REVERSE: 순방향, 역방향 번갈아가며)
@@ -81,12 +83,12 @@ class StartActivity : AppCompatActivity() {
         // 애니메이션 시작
         anim.start()
 
-        //화면 터치 시 시작 배경음 종료, 시작 효과음 재생, 게임 화면으로 전환
-        startView.setOnTouchListener { view, motionEvent ->
+        //화면 터치 시 대기 배경음 종료, 시작 효과음 재생, 게임 화면으로 전환
+        waitView.setOnTouchListener { view, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_UP) {
-                startViewBGM.stop()
+                waitViewBGM.stop()
                 startSound.start()
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, GameActivity::class.java)
                 startActivity(intent)
 
                 //액티비티 종료
@@ -101,7 +103,7 @@ class StartActivity : AppCompatActivity() {
 
     //액티비티 종료 시 시작 배경음 반납, 시작 효과음, 팝업창 효과음 반납
     override fun onDestroy() {
-        startViewBGM.release()
+        waitViewBGM.release()
         startSound.release()
         popUpSound.release()
         super.onDestroy()

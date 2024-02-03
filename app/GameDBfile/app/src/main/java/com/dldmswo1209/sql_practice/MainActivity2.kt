@@ -1,10 +1,11 @@
-package com.example.myapplication
+package com.dldmswo1209.sql_practice
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
-import com.example.myapplication.databinding.ActivityMainBinding
+import com.dldmswo1209.sql_practice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var db: DBHelper

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".StartActivity">
+    tools:context=".WaitActivity">
 
     <ImageView
-        android:id="@+id/startView"
+        android:id="@+id/waitView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="-16dp" />
 
     <TextView
-        android:id="@+id/startText"
+        android:id="@+id/waitText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"

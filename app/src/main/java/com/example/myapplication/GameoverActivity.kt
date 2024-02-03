@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 
 class GameoverActivity : AppCompatActivity() {
     lateinit var gameoverView: ImageView    //게임오버화면 이미지
-    lateinit var gameoverText: TextView     //게임오버화면 텍스트 ("터치하면 시작화면으로 돌아갑니다")
+    lateinit var gameoverText: TextView     //게임오버화면 텍스트 ("터치하면 대기화면으로 돌아갑니다")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //status bar 검정색으로 변경
@@ -33,10 +33,10 @@ class GameoverActivity : AppCompatActivity() {
         // 애니메이션 시작
         anim.start()
 
-        //화면 터치 시 시작화면으로 돌아감
+        //화면 터치 시 대기화면으로 돌아감
         gameoverView.setOnTouchListener { view, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_UP) {
-                var intent = Intent(this, StartActivity::class.java)
+                var intent = Intent(this, WaitActivity::class.java)
                 startActivity(intent)
 
                 //액티비티 종료

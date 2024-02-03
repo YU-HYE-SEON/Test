@@ -776,7 +776,7 @@ class Game(context: Context?, attr: AttributeSet?) : View(context, attr) {
         }
     }
 
-    //30초를 센 후, MainActivity 안에서 호출됨
+    //30초를 센 후, GameActivity 안에서 호출됨
     fun timeOut() {
         //스레드 중지
         thread!!.run = false
